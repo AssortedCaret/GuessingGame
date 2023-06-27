@@ -41,13 +41,11 @@ public class GuessingGame extends JFrame {
 		numberOfTries = numberOfTries + 1;
 	}
 	
-	//Используем воид, потому что нам не надо возвращать число, которое получится
 	public void newGame() {
 		theNumber = (int)(Math.random() * 100 + 1);
 		btnPlayAgain.setVisible(false);
 	}
 	
-	//Дальше идет код интерфейса (кнопки, которые мы добаляли через Desigh
 	public GuessingGame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("Alexandr HILo Guessing Game");
@@ -68,13 +66,11 @@ public class GuessingGame extends JFrame {
 		textGuess.setBounds(335, 122, 45, 20);
 		getContentPane().add(textGuess);
 		textGuess.setColumns(10);
-		// Позволит нам подтверждать ввод клавишей Интер
 		textGuess.addActionListener(new ActionListener() {
 			public void actionPerformed (ActionEvent e) {
 				checkGuess();
 			}
 		});
-		// Активирует кнопку, которая подтверждает ввод значения
 		JButton btnNewButton = new JButton("Guess!");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -90,7 +86,6 @@ public class GuessingGame extends JFrame {
 		lblOutput.setBounds(71, 200, 297, 14);
 		getContentPane().add(lblOutput);
 		
-		//создает кнопку играть ещё раз
 		btnPlayAgain = new JButton("Play Again");
 		btnPlayAgain.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -101,7 +96,6 @@ public class GuessingGame extends JFrame {
 		getContentPane().add(btnPlayAgain);
 	}
 	
-	//Создает окно указанного размера
 	public static void main(String[] args) {
 		GuessingGame theGame= new GuessingGame();
 		theGame.newGame();
